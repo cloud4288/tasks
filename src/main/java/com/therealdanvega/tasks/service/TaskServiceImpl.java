@@ -3,6 +3,7 @@ package com.therealdanvega.tasks.service;
 import com.therealdanvega.tasks.dao.TaskDao;
 import com.therealdanvega.tasks.entity.Task;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author Philip Mark Gutierrez
@@ -18,5 +19,11 @@ public class TaskServiceImpl implements TaskService {
     @Override
     public Iterable<Task> list() {
         return taskDao.findAll();
+    }
+
+    @Override
+    @Transactional
+    public Task save(Task task) {
+        return taskDao.save(task);
     }
 }

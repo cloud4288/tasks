@@ -7,4 +7,6 @@ import com.therealdanvega.tasks.entity.Task;
  */
 public interface TaskService {
     Iterable<Task> list();
+
+    Task save(Task task);
 }
