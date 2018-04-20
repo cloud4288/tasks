@@ -16,7 +16,7 @@ export class TasksListComponent implements OnInit {
 
     ngOnInit() {
         return this.taskService.getTasks()
-            .subscribe((tasks: any[]) => {
+            .subscribe((tasks: Task[]) => {
                 this.tasks = tasks;
             }, error => {
                 console.log(error);
@@ -28,7 +28,6 @@ export class TasksListComponent implements OnInit {
     }
 
     onTaskChange(event, task: Task) {
-        console.log('Task has changed');
-        // this.taskService.saveTask(task, event.target.checked).subscribe();
+        this.taskService.saveTask(task, event.target.checked).subscribe();
     }
 }
