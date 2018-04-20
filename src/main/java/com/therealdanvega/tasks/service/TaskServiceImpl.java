@@ -26,4 +26,9 @@ public class TaskServiceImpl implements TaskService {
     public Task save(Task task) {
         return taskDao.save(task);
     }
+
+    @Override
+    public Task update(Task task) {
+        return taskDao.save(task);
+    }
 }

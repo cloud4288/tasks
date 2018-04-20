@@ -8,6 +8,7 @@ import { TasksAddComponent } from './tasks/tasks-add/tasks-add.component';
 import { TasksListComponent } from './tasks/tasks-list/tasks-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TaskService } from './tasks/task.service';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { TaskService } from './tasks/task.service';
     ],
     imports: [
         HttpClientModule,
+        FormsModule,
         BrowserModule
     ],
     providers: [TaskService],

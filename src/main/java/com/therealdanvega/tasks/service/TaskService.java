@@ -9,4 +9,6 @@ public interface TaskService {
     Iterable<Task> list();
 
     Task save(Task task);
+
+    Task update(Task task);
 }
