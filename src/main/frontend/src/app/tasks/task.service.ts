@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Task } from './tasks.model';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class TaskService {
@@ -7,8 +9,7 @@ export class TaskService {
     constructor(private http: HttpClient) {
     }
 
-    getTasks() {
-        return this.http.get('/api/tasks')
-            .map(response => response.json());
+    getTasks(): Observable<Task[]> {
+        return this.http.get<Task[]>('/api/tasks');
     }
 }
