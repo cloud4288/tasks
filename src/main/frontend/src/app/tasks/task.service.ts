@@ -17,10 +17,10 @@ export class TaskService {
 
     saveTask(task: Task, checked: boolean): Observable<Task> {
         task.completed = checked;
-        return this.http.put<Task>('/api/tasks', task);
+        return this.http.put<Task>('/api/tasks/save', task);
     }
 
     addTask(task: Task) {
-        return this.http.post<Task>('/api/tasks', task);
+        return this.http.post<Task>('/api/tasks/add', task);
     }
 }

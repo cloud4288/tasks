@@ -21,12 +21,12 @@ public class TaskRest {
         return taskService.list();
     }
 
-    @PutMapping
+    @PutMapping("/save")
     public Task saveTask(@RequestBody Task task) {
         return taskService.save(task);
     }
 
-    @PostMapping
+    @PostMapping("/add")
     public Task addTask(@RequestBody Task task) {
         return taskService.update(task);
     }
